@@ -3,6 +3,7 @@
 This is the system configuration that I use on my Arch Linux computers.
 
 Required things (I probably should add a script that installs them in the future):
+
 **Compositor & Related**
 - hyprland
 - hyprpaper
@@ -10,6 +11,7 @@ Required things (I probably should add a script that installs them in the future
 - xdg-desktop-portal-hyprland
 - hyprpicker
 - hyprshot (AUR)
+
 **Apps**
 - dolphin
 - kdeconnect
@@ -17,11 +19,13 @@ Required things (I probably should add a script that installs them in the future
 - gajim
 - syncthingtray-qt6
 - vesktop
+
 **Terminal & Related**
 - ghostty
 - fish
 - starship
 - eza
+
 **Misc Tools**
 - copyq
 - udiskie
@@ -31,6 +35,7 @@ Required things (I probably should add a script that installs them in the future
 - qt6ct-kde (AUR)
 - kvantum-qt5
 - kvantum
+
 **Other**
 - adw-gtk-theme
 - kvantum-theme-dracula-git
@@ -46,5 +51,4 @@ This section documents some settings which aren't in this repo.
     - browser.display.auto_quality_min_font_size = 10
 
 ## TODO
-- move gammastep location into data (also delete the git history)
 - decouple autostart from Hyprland config? (UWSM?)
