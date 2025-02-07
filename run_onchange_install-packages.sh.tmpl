@@ -1,4 +1,9 @@
 #!/bin/bash
 
-sudo pacman -S {{ range .packages.pacman -}} {{ . | quote }} {{ end }}
-yay -S {{ range .packages.aur -}} {{ . | quote }} {{ end }}
+pacman_packages=({{ range .packages.pacman -}} {{ . | quote }} {{ end }})
+echo "Installing packages: ${pacman_packages[*]}"
+sudo pacman -S ${pacman_packages[*]}
+
+aur_packages=({{ range .packages.aur -}} {{ . | quote }} {{ end }})
+echo "Installing AUR packages: ${aur_packages[*]}"
+yay -S ${aur_packages[*]}
