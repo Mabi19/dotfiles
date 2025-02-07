@@ -27,18 +27,18 @@ Required things (I probably should add a script that installs them in the future
 - eza
 
 **Misc Tools**
-- copyq
 - udiskie
 - gammastep
 - geoclue
 - nwg-look
+- qt5ct
 - qt6ct-kde (AUR)
 - kvantum-qt5
 - kvantum
 
 **Other**
 - adw-gtk-theme
-- kvantum-theme-dracula-git
+- kvantum-theme-dracula-git (AUR)
 - papirus-icon-theme
 - archlinux-xdg-menu
 - ttf-ibm-plex
@@ -51,4 +51,4 @@ This section documents some settings which aren't in this repo.
     - browser.display.auto_quality_min_font_size = 10
 
 ## TODO
-- decouple autostart from Hyprland config? (UWSM?)
+- package mabi-shell properly
