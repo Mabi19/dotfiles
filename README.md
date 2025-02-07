@@ -14,11 +14,7 @@ Required things (I probably should add a script that installs them in the future
 
 **Apps**
 - dolphin
-- kdeconnect
 - walker-bin (AUR)
-- gajim
-- syncthingtray-qt6
-- vesktop
 
 **Terminal & Related**
 - ghostty

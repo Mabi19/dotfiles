@@ -6,7 +6,6 @@ packages:
   - xdg-desktop-portal-hyprland
   - hyprpicker
   - dolphin
-  - kdeconnect
   - ghostty
   - fish
   - starship
