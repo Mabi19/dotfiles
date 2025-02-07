@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 sudo pacman -S {{ range .packages.pacman -}} {{ . | quote }} {{ end }}
 yay -S {{ range .packages.aur -}} {{ . | quote }} {{ end }}
