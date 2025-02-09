@@ -1,5 +1,6 @@
 set -g fish_greeting
-set -g EDITOR micro
+set -gx EDITOR micro
+set -gx SHELL (which fish)
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
