@@ -2,7 +2,7 @@
 
 This is the system configuration that I use on my Arch Linux computers.
 
-Required things (I probably should add a script that installs them in the future):
+Required things (There's a script that installs all of this included):
 
 **Compositor & Related**
 - hyprland
@@ -34,12 +34,14 @@ Required things (I probably should add a script that installs them in the future
 
 **Other**
 - adw-gtk-theme
-- kvantum-theme-dracula-git (AUR)
 - papirus-icon-theme
 - archlinux-xdg-menu
 - ttf-ibm-plex
 - ttf-jetbrains-mono
 - ttf-jetbrains-mono-nerd
+
+These things need to be installed manually:
+- the Kvantum theme. Obtained from https://github.com/dracula/gtk/tree/master/kde/kvantum/Dracula-Solid
 
 ## Other configuration
 This section documents some settings which aren't in this repo.
