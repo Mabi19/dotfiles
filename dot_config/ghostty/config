@@ -13,6 +13,6 @@ window-padding-color = extend
 window-padding-balance = true
 
 gtk-single-instance = true
-# quit-after-last-window-closed = false
+quit-after-last-window-closed = false
 
 command = /usr/bin/fish
