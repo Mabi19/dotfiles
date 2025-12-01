@@ -1,0 +1,24 @@
+force_keyboard_focus = true
+
+[providers]
+default = ["desktopapplications", "calc", "websearch"]
+
+[[providers.prefixes]]
+prefix = "$"
+provider = "runner"
+
+[[providers.prefixes]]
+prefix = "?"
+provider = "websearch"
+
+[[providers.prefixes]]
+prefix = "="
+provider = "calc"
+
+[[providers.prefixes]]
+prefix = ":"
+provider = "symbols"
+
+[[providers.prefixes]]
+prefix = "/"
+provider = "providerlist"

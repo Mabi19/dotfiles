@@ -4,7 +4,9 @@ background = #1e1e2e
 foreground = #d3dcfe
 # whiter white
 palette = 15=#dae4ff
-theme = catppuccin-macchiato
+theme = Catppuccin Macchiato
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 11
 
 # increase line height
 adjust-cell-height = 5%

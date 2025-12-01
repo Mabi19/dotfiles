@@ -13,8 +13,6 @@ packages:
   - udiskie
   - gammastep
   - geoclue
-  - qt5ct
-  - kvantum-qt5
   - kvantum
   - adw-gtk-theme
   - papirus-icon-theme
@@ -23,7 +21,15 @@ packages:
   - ttf-jetbrains-mono
   - ttf-jetbrains-mono-nerd
   aur:
+  - elephant
+  - elephant-calc
+  - elephant-clipboard
+  - elephant-desktopapplications
+  - elephant-providerlist
+  - elephant-runner
+  - elephant-symbols
+  - elephant-websearch
   - hyprshot
+  - hyprqt6engine
   - walker-bin
-  - qt6ct-kde
   - libastal-meta
