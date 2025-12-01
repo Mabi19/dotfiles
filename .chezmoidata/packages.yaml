@@ -30,6 +30,6 @@ packages:
   - elephant-symbols
   - elephant-websearch
   - hyprshot
-  - hyprqt6engine
+  - qt6ct-kde
   - walker-bin
   - libastal-meta
