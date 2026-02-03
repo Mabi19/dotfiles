@@ -1,0 +1,14 @@
+name = "commands"
+name_pretty = "Commands"
+icon = "open-menu"
+
+[[entries]]
+text = "Rescue window"
+keywords = ["rescue"]
+submenu = "rescue"
+icon = "window-new"
+
+[[entries]]
+text = "Toggle zoom"
+actions = { zoom_use = "~/.config/hypr/scripts/zoom.fish" }
+icon = "zoom-in"

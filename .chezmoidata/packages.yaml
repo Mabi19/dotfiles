@@ -25,6 +25,7 @@ packages:
   - elephant-calc
   - elephant-clipboard
   - elephant-desktopapplications
+  - elephant-menus
   - elephant-providerlist
   - elephant-runner
   - elephant-symbols
