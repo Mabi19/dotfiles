@@ -1,0 +1,12 @@
+{
+    "primary_monitor": "DP-2",
+    "max_network_usage": 12500000,
+    "bar_style": "floating",
+    "notification_debug_menu": true,
+    "notification_rules": [
+        {
+            "if": { "app_name": "^Gajim$" },
+            "then": { "layout": "message" }
+        }
+    ]
+}

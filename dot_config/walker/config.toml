@@ -20,5 +20,17 @@ prefix = ":"
 provider = "symbols"
 
 [[providers.prefixes]]
-prefix = "/"
+prefix = "@"
 provider = "providerlist"
+
+[[providers.prefixes]]
+prefix = "\\"
+provider = "clipboard"
+
+[[providers.prefixes]]
+prefix = "/"
+provider = "menus:commands"
+
+[[emergencies]]
+text = "Firefox"
+command = "firefox"
