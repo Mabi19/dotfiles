@@ -12,3 +12,9 @@ icon = "window-new"
 text = "Toggle zoom"
 actions = { zoom_use = "~/.config/hypr/scripts/zoom.fish" }
 icon = "zoom-in"
+
+[[entries]]
+text = "Inhibit idle"
+keywords = ["inhibit"]
+actions = { inhibit_toggle = "mabictl inhibit-idle" }
+icon = "face-yawn-symbolic"
