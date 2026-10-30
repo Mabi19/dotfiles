@@ -9,6 +9,9 @@ GlobalViewProps=false
 Version=202
 ViewPropsTimestamp=2024,9,4,20,25,30.802
 
+[IconsMode]
+PreviewSize=48
+
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
@@ -17,7 +20,4 @@ Places Icons Static Size=22
 MenuBar=Disabled
 
 [PreviewSettings]
-Plugins=djvuthumbnail,windowsexethumbnail,directorythumbnail,svgthumbnail,exrthumbnail,appimagethumbnail,opendocumentthumbnail,fontthumbnail,comicbookthumbnail,cursorthumbnail,ebookthumbnail,windowsimagethumbnail,imagethumbnail,audiothumbnail,jpegthumbnail,kraorathumbnail,avif,evince,gdk-pixbuf-thumbnailer,gsf-office,heif,jxl
-
-[ViewPropertiesDialog]
-2 screens: Window-Maximized=true
+Plugins=appimagethumbnail,audiothumbnail,evince,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,opendocumentthumbnail,svgthumbnail
