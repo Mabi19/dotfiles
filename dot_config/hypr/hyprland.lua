@@ -84,6 +84,9 @@ hl.config({
             render_power = 3,
         }
     },
+    cursor = {
+        zoom_disable_aa = true,
+    }
 })
 
 -- Animations
@@ -108,7 +111,7 @@ hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 5, bezier = "quick" })
+hl.animation({ leaf = "zoomFactor", enabled = true, speed = 6, bezier = "easeOutQuint" })
 
 -- Behavior
 hl.config({
@@ -223,6 +226,16 @@ hl.bind("Caps_Lock", hl.dsp.exec_cmd("~/.config/hypr/scripts/capslock.fish"), {
     dont_inhibit = true,
     submap_universal = true,
 })
+
+-- Zoom
+function ToggleZoom()
+    if hl.get_config("cursor.zoom_factor") > 1 then
+        hl.config({ ["cursor.zoom_factor"] = 1 })
+    else
+        hl.config({ ["cursor.zoom_factor"] = 3 })
+    end
+end
+hl.bind("SUPER + Z", ToggleZoom)
 
 -- Window rules
 hl.window_rule({

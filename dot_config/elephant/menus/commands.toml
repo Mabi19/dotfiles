@@ -4,7 +4,7 @@ icon = "open-menu"
 
 [[entries]]
 text = "Toggle zoom"
-actions = { zoom_use = "~/.config/hypr/scripts/zoom.fish" }
+actions = { zoom_use = "hyprctl eval 'ToggleZoom()'" }
 icon = "zoom-in"
 
 [[entries]]
