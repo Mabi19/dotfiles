@@ -133,12 +133,9 @@ hl.config({
         focus_on_activate = true,
         screencopy_force_8b = false,
     },
-    -- TODO: Enable when 0.57 is out
-    --[[
     layers = {
         allow_new_top_layers_over_existing_fullscreen = false,
     },
-    --]]
     xwayland = {
         force_zero_scaling = true,
     },
@@ -163,6 +160,10 @@ hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
+hl.bind("SUPER + SHIFT + left", hl.dsp.window.swap({ direction = "left" }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
+hl.bind("SUPER + SHIFT + up", hl.dsp.window.swap({ direction = "up" }))
+hl.bind("SUPER + SHIFT + down", hl.dsp.window.swap({ direction = "down" }))
 local resize_delta = 120
 hl.bind("SUPER + CTRL + left", hl.dsp.window.resize({ x = resize_delta, y = 0, relative = true }))
 hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = resize_delta, y = 0, relative = true }))
