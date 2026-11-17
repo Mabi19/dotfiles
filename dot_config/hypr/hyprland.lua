@@ -168,7 +168,7 @@ hl.bind("SUPER + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
 hl.bind("SUPER + SHIFT + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind("SUPER + SHIFT + down", hl.dsp.window.swap({ direction = "down" }))
 local resize_delta = 120
-hl.bind("SUPER + CTRL + left", hl.dsp.window.resize({ x = resize_delta, y = 0, relative = true }))
+hl.bind("SUPER + CTRL + left", hl.dsp.window.resize({ x = -resize_delta, y = 0, relative = true }))
 hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = resize_delta, y = 0, relative = true }))
 hl.bind("SUPER + CTRL + up", hl.dsp.window.resize({ x = 0, y = -resize_delta, relative = true }))
 hl.bind("SUPER + CTRL + down", hl.dsp.window.resize({ x = 0, y = resize_delta, relative = true }))
