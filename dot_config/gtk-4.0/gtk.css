@@ -1,39 +1,35 @@
-/*
+/* @define-color is deprecated in GTK 4, but it lets us share the same file across GTK 3 and 4. */
 
-  Dracula theme for libadwaita
-  and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
-
-  Colors from - https://draculatheme.com
-
-  1. If ~/.config/gtk-4.0/gtk.css and/or ~/.config/gtk-3.0/gtk.css exists, make backups
-  2. Enable the adw-gtk3-dark theme
-  3. Save this file to ~/.config/gtk-4.0/gtk.css
-  4. Make the file a symbolic link to ~/.config/gtk-3.0/gtk.css (or copy it to that location)
-  5. Close and re-open any open apps or log out and in again
-
-*/
-
-/* Global color definitions */
-
-@define-color window_bg_color #1e1f29;
-@define-color window_fg_color #f8f8f2;
-@define-color view_bg_color #282a36;
+@define-color window_bg_color #1f202d;
+@define-color window_fg_color whitesmoke;
+@define-color view_bg_color #2a2c39;
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #bd93f9;
+
+@define-color accent_bg_color #9370d8;
 @define-color accent_fg_color #ffffff;
-@define-color accent_color #dbbcff;
+@define-color accent_color #dc9fff;
+
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
-@define-color popover_bg_color #44475a;
+
+@define-color popover_bg_color #3f4252;
 @define-color popover_fg_color @view_fg_color;
+
 @define-color dialog_bg_color @popover_bg_color;
 @define-color dialog_fg_color @popover_fg_color;
+
 @define-color card_bg_color rgba(255, 255, 255, 0.08);
 @define-color card_fg_color @window_fg_color;
-@define-color sidebar_bg_color @headerbar_bg_color;
+
+@define-color sidebar_bg_color @window_bg_color;
 @define-color sidebar_fg_color @window_fg_color;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
+
+@define-color secondary_sidebar_bg_color @view_bg_color;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @window_bg_color;
+@define-color secondary_sidebar_shade_color rgba(0,0,0,0.25);
 
 :root {
     --accent-bg-color: @accent_bg_color;
