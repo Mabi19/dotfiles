@@ -177,9 +177,12 @@ hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = resize_delta, y = 0, 
 hl.bind("SUPER + CTRL + up", hl.dsp.window.resize({ x = 0, y = -resize_delta, relative = true }))
 hl.bind("SUPER + CTRL + down", hl.dsp.window.resize({ x = 0, y = resize_delta, relative = true }))
 
+-- Used to block
+local fullscreen_bar_up = false
 -- Shell actions
 if shell then
     hl.bind("Super_L", function()
+        fullscreen_bar_up = true
         shell.bar.set_above_fullscreen(true)
     end, {
         long_press = true,
@@ -189,6 +192,7 @@ if shell then
     hl.on("input.keyboard.key", function(keycode, _, state)
         -- Super_L (XKB keycode, not keysym!) and released
         if keycode == 133 and state == 0 then
+            fullscreen_bar_up = false
             shell.bar.set_above_fullscreen(false)
         end
     end)
@@ -213,7 +217,12 @@ end
 -- Mouse actions
 hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:272", function()
+    if not fullscreen_bar_up or not hl.get_active_workspace().has_fullscreen then
+        hl.dispatch(hl.dsp.window.drag())
+    end
+    return { ok = false }
+end, { mouse = true, auto_consuming = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Gestures
