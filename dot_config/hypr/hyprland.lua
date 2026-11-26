@@ -15,7 +15,11 @@ require("monitors")
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 
 -- Autostart
-try_require("/usr/local/share/mabi-shell/hyprland")
+local status, shell = pcall(require, "/usr/local/share/mabi-shell/hyprland")
+if not status then
+    shell = nil
+end
+
 hl.on("hyprland.start", function()
     -- to run mabi-shell in
     hl.exec_cmd("kitty", { workspace = "3 silent" })
@@ -173,6 +177,39 @@ hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = resize_delta, y = 0, 
 hl.bind("SUPER + CTRL + up", hl.dsp.window.resize({ x = 0, y = -resize_delta, relative = true }))
 hl.bind("SUPER + CTRL + down", hl.dsp.window.resize({ x = 0, y = resize_delta, relative = true }))
 
+-- Shell actions
+if shell then
+    hl.bind("Super_L", function()
+        shell.bar.set_above_fullscreen(true)
+    end, {
+        long_press = true,
+        ignore_mods = true,
+        transparent = true,
+    })
+    hl.on("input.keyboard.key", function(keycode, _, state)
+        -- Super_L (XKB keycode, not keysym!) and released
+        if keycode == 133 and state == 0 then
+            shell.bar.set_above_fullscreen(false)
+        end
+    end)
+
+    hl.bind("SUPER + A", function()
+        shell.side_panel.toggle()
+    end)
+
+    -- Show Caps Lock state
+    -- Unfortunately Lua does not have API for checking it.
+    hl.bind("Caps_Lock", hl.dsp.exec_cmd("~/.config/hypr/scripts/capslock.fish"), {
+        locked = true,
+        release = true,
+        non_consuming = true,
+        transparent = true,
+        ignore_mods = true,
+        dont_inhibit = true,
+        submap_universal = true,
+    })
+end
+
 -- Mouse actions
 hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
@@ -215,18 +252,6 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Show Caps Lock state
--- Unfortunately Lua does not have API for checking it.
-hl.bind("Caps_Lock", hl.dsp.exec_cmd("~/.config/hypr/scripts/capslock.fish"), {
-    locked = true,
-    release = true,
-    non_consuming = true,
-    transparent = true,
-    ignore_mods = true,
-    dont_inhibit = true,
-    submap_universal = true,
-})
-
 -- Zoom
 function ToggleZoom()
     if hl.get_config("cursor.zoom_factor") > 1 then
@@ -235,6 +260,7 @@ function ToggleZoom()
         hl.config({ ["cursor.zoom_factor"] = 3 })
     end
 end
+
 hl.bind("SUPER + Z", ToggleZoom)
 
 -- Window rules
